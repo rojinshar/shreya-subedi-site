@@ -1,22 +1,45 @@
-# Shreya Subedi — creator site
+# Shreya Subedi — portfolio site
 
-A one-page site built with React and Vite, deployed to Cloudflare Pages from GitHub.
+A static, single-page site at shreyasubedi.net: plain HTML, one stylesheet and
+a little vanilla JS (mobile nav, brand carousel, copy email). Vite is only the
+build step. Deployed to Cloudflare Pages from GitHub.
 
-## Editing content
+The visual reference is [`design/Main.dc.html`](design/Main.dc.html) and the
+spec is [`design/BUILD_BRIEF.md`](design/BUILD_BRIEF.md).
 
-All text, links, stats and images are in [`src/content.js`](src/content.js).
+## Where things live
 
-- **Photos:** every image path (hero, About collage, Work rows) is in
-  `content.js` and the files live in `public/`. The current ones are all crops
-  of one photo; swap in new photos any time.
-- **Italics:** in headings and the intro, words wrapped in `*asterisks*` are
-  set in italics.
-- **Work rows:** add another item to `work.items` and it gets the next numeral
-  (III., IV., …) and alternates sides automatically.
-- **Email:** set `contact.email` to show it under the contact button.
-- **Link previews:** the title, description and `og:image` are in `index.html`.
-  The preview image is `public/og-image.jpg` (1200×630). Once the site has its
-  final domain, make the `og:image` URL absolute.
+| File | What's in it |
+| ---- | ------------ |
+| `index.html` | All page copy and markup |
+| `src/styles.css` | Every style, with the design tokens at the top |
+| `src/main.js` | Nav menu, carousel, copy-to-clipboard |
+| `src/data/videos.json` | The "Watch the work" thumbnails |
+| `src/data/brands.json` | The brand logo carousel, in order |
+| `public/` | Files served as-is (favicon, `og-image.jpg`, images, logos, CV) |
+
+`vite.config.js` renders the two JSON files into the page at build time, so the
+live site is plain HTML.
+
+### Adding a video
+
+Add one entry to `src/data/videos.json`:
+
+```json
+{ "group": "brand", "brand": "Wai Wai", "title": "…", "views": "1.47M", "platform": "TikTok", "url": "https://…", "thumb": "/assets/img/thumbs/waiwai.webp" }
+```
+
+`group` is `"brand"` or `"original"`. `platform` is `TikTok`, `Instagram` or
+`Facebook`. Put the thumbnail (720×1280) in `public/assets/img/thumbs/` as
+`.webp` with a `.jpg` of the same name beside it. Leave `thumb` empty to keep
+the striped placeholder.
+
+### Adding a brand logo
+
+Put the SVG in `public/assets/logos/` and set its `logo` path in
+`src/data/brands.json`, e.g. `"logo": "/assets/logos/wai-wai.svg"`. Entries
+without a logo show the brand name as grey text. The carousel regroups its pages
+automatically.
 
 ## Running locally
 
@@ -25,39 +48,17 @@ Requires Node 22 (`nvm use` reads `.nvmrc`).
 ```sh
 npm install
 npm run dev      # http://localhost:5173
+npm run build    # outputs dist/
 ```
 
-## Deploying (GitHub → Cloudflare Pages)
+## Deploying
 
-1. Create an empty repository on GitHub, then push this project:
+Cloudflare Pages builds from the `main` branch on GitHub:
 
-   ```sh
-   git add -A
-   git commit -m "Initial site"
-   git remote add origin https://github.com/<you>/shreya-subedi-site.git
-   git push -u origin main
-   ```
+| Setting          | Value           |
+| ---------------- | --------------- |
+| Framework preset | None            |
+| Build command    | `npm run build` |
+| Output directory | `dist`          |
 
-2. In the Cloudflare dashboard go to **Workers & Pages → Create → Pages →
-   Connect to Git**, authorize GitHub and pick the repository.
-
-3. Use these build settings:
-
-   | Setting          | Value           |
-   | ---------------- | --------------- |
-   | Framework preset | React (Vite)    |
-   | Build command    | `npm run build` |
-   | Output directory | `dist`          |
-
-   Cloudflare reads `.nvmrc`, so it builds with Node 22 automatically.
-
-4. Click **Save and Deploy**. The site goes live at
-   `https://<project-name>.pages.dev`.
-
-After that, every push to `main` redeploys the site, and every other branch
-gets its own preview URL.
-
-### Custom domain
-
-In the Pages project, open **Custom domains → Set up a domain**. If the domain
-is already on Cloudflare, DNS is configured automatically.
+Every push to `main` redeploys the site.

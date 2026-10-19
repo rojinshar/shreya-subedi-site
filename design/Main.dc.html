@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shreya Subedi — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+
+<div id="top" style="container-type: inline-size; width: 100%; background: #F2F0EB; color: #151515; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased">
+
+<!-- ============ NAV ============ -->
+<header style="position: sticky; top: 0; z-index: 10; padding: 12px clamp(12px, 3cqi, 40px) 0">
+  <nav ref="{{navRef}}" aria-label="Main" style="max-width: 1200px; margin: 0 auto; background: #151515; color: #FFFFFF; border-radius: {{navRadius}}; padding: 8px 8px 8px 10px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+    <a href="#top" style="display: flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; min-height: 44px">
+      <span aria-hidden="true" style="width: 32px; height: 32px; border-radius: 50%; background: #F5A3E4; color: #151515; display: grid; place-items: center; font: 800 15px/1 'Inter Tight', sans-serif">S</span>
+      <span style="font: 700 15px/1 'Inter Tight', sans-serif; letter-spacing: -0.01em; white-space: nowrap">Shreya Subedi</span>
+    </a>
+    <sc-if value="{{navWide}}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; gap: 4px; justify-content: center; flex: 1 1 auto">
+        <a href="#about" style="color: #D9D6CF; text-decoration: none; font-size: 14px; font-weight: 500; padding: 0 12px; min-height: 44px; display: flex; align-items: center; white-space: nowrap">About</a>
+        <a href="#results" style="color: #D9D6CF; text-decoration: none; font-size: 14px; font-weight: 500; padding: 0 12px; min-height: 44px; display: flex; align-items: center; white-space: nowrap">Results</a>
+        <a href="#research" style="color: #D9D6CF; text-decoration: none; font-size: 14px; font-weight: 500; padding: 0 12px; min-height: 44px; display: flex; align-items: center; white-space: nowrap">Research</a>
+        <a href="#work" style="color: #D9D6CF; text-decoration: none; font-size: 14px; font-weight: 500; padding: 0 12px; min-height: 44px; display: flex; align-items: center; white-space: nowrap">Work</a>
+        <a href="#services" style="color: #D9D6CF; text-decoration: none; font-size: 14px; font-weight: 500; padding: 0 12px; min-height: 44px; display: flex; align-items: center; white-space: nowrap">Services</a>
+      </div>
+    </sc-if>
+    <div style="display: flex; align-items: center; gap: 6px">
+      <a href="#contact" style="background: #FFFFFF; color: #151515; text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 999px; padding: 0 18px; min-height: 44px; display: flex; align-items: center; white-space: nowrap">Work with me</a>
+      <sc-if value="{{navCompact}}" hint-placeholder-val="{{ false }}">
+        <button type="button" aria-label="{{menuLabel}}" aria-expanded="{{menuExpanded}}" onClick="{{toggleMenu}}" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #3A3935; background: transparent; color: #FFFFFF; display: grid; place-items: center; cursor: pointer; padding: 0">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="{{menuIcon}}"></path></svg>
+        </button>
+      </sc-if>
+    </div>
+    <sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+      <div style="flex: 1 1 100%; display: flex; flex-direction: column; padding: 4px 6px 10px; border-top: 1px solid #2E2E2C">
+        <a href="#about" onClick="{{closeMenu}}" style="color: #FFFFFF; text-decoration: none; font: 700 22px/1.2 'Inter Tight', sans-serif; padding: 0 6px; min-height: 52px; display: flex; align-items: center">About</a>
+        <a href="#results" onClick="{{closeMenu}}" style="color: #FFFFFF; text-decoration: none; font: 700 22px/1.2 'Inter Tight', sans-serif; padding: 0 6px; min-height: 52px; display: flex; align-items: center">Results</a>
+        <a href="#research" onClick="{{closeMenu}}" style="color: #FFFFFF; text-decoration: none; font: 700 22px/1.2 'Inter Tight', sans-serif; padding: 0 6px; min-height: 52px; display: flex; align-items: center">Research</a>
+        <a href="#work" onClick="{{closeMenu}}" style="color: #FFFFFF; text-decoration: none; font: 700 22px/1.2 'Inter Tight', sans-serif; padding: 0 6px; min-height: 52px; display: flex; align-items: center">Work</a>
+        <a href="#services" onClick="{{closeMenu}}" style="color: #FFFFFF; text-decoration: none; font: 700 22px/1.2 'Inter Tight', sans-serif; padding: 0 6px; min-height: 52px; display: flex; align-items: center">Services</a>
+      </div>
+    </sc-if>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section aria-labelledby="hero-title" style="padding: clamp(40px, 7cqi, 96px) clamp(16px, 4cqi, 40px) clamp(48px, 6cqi, 80px)">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: clamp(40px, 6cqi, 80px); align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <p style="margin: 0; font: 500 12px/1.4 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #A3106F">● Nepali creator · POV &amp; comedy · UGC</p>
+      <h1 id="hero-title" style="margin: 0; font: 800 clamp(42px, 6.6cqi, 84px)/0.98 'Inter Tight', 'Arial Narrow', sans-serif; letter-spacing: -0.035em; text-wrap: balance">Content Nepal can’t scroll past.</h1>
+      <p style="margin: 0; max-width: 34em; font-size: clamp(16px, 1.5cqi, 18px); color: #4F4D48; text-wrap: pretty">I’m Shreya, a Kathmandu creator making relatable Nepali POV and comedy. Brands like inDrive, eSewa and Wai Wai use my videos to reach people the way a friend would, and I test what works with data, not guesses.</p>
+      <ul aria-label="Categories" style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+        <li style="background: #FFFFFF; border: 1px solid #E0DDD5; border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500">Comedy &amp; POV</li>
+        <li style="background: #FFFFFF; border: 1px solid #E0DDD5; border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500">Ride-hailing &amp; payments</li>
+        <li style="background: #FFFFFF; border: 1px solid #E0DDD5; border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500">Smartphones &amp; motorcycles</li>
+        <li style="background: #FFFFFF; border: 1px solid #E0DDD5; border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 500">Food, personal care &amp; e-commerce</li>
+      </ul>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+        <a href="#contact" style="background: #151515; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px; padding: 0 8px 0 22px; min-height: 52px; display: inline-flex; align-items: center; gap: 12px">Work with me <span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #F5A3E4; color: #151515; display: grid; place-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+        <a href="#work" style="color: #151515; font-weight: 600; font-size: 15px; padding: 0 16px; min-height: 52px; display: inline-flex; align-items: center; text-underline-offset: 4px">See my work</a>
+      </div>
+      <dl style="margin: 8px 0 0; padding-top: 24px; border-top: 1px solid #DCD9D1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(120px, 100%), 1fr)); gap: 20px">
+        <div><dt style="font: 800 clamp(28px, 3cqi, 38px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">60M+</dt><dd style="margin: 6px 0 0; font-size: 13px; color: #5C5A55">Organic views on my content</dd></div>
+        <div><dt style="font: 800 clamp(28px, 3cqi, 38px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">45+</dt><dd style="margin: 6px 0 0; font-size: 13px; color: #5C5A55">Brands I have created for</dd></div>
+        <div><dt style="font: 800 clamp(28px, 3cqi, 38px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">1,500+</dt><dd style="margin: 6px 0 0; font-size: 13px; color: #5C5A55">Applicants for a brand-new college</dd></div>
+        <div><dt style="font: 800 clamp(28px, 3cqi, 38px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">+35%</dt><dd style="margin: 6px 0 0; font-size: 13px; color: #5C5A55">Sales from one video I made</dd></div>
+      </dl>
+    </div>
+
+    <!-- stacked phone cards -->
+    <div style="position: relative; width: 100%; max-width: 520px; margin: 0 auto; aspect-ratio: 1 / 1.12">
+      <div aria-hidden="true" style="position: absolute; left: 6%; top: 8%; width: 50%; aspect-ratio: 9 / 16; border-radius: 22px; transform: rotate(-9deg); background: repeating-linear-gradient(135deg, #CFCBC2 0 10px, #D8D4CC 10px 20px); box-shadow: 0 18px 40px rgba(21,21,21,0.18)"></div>
+      <div aria-hidden="true" style="position: absolute; right: 6%; top: 6%; width: 50%; aspect-ratio: 9 / 16; border-radius: 22px; transform: rotate(8deg); background: repeating-linear-gradient(135deg, #CFCBC2 0 10px, #D8D4CC 10px 20px); box-shadow: 0 18px 40px rgba(21,21,21,0.18)"></div>
+      <a href="#work" aria-label="Watch featured video" style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 58%; aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; background: repeating-linear-gradient(135deg, #2A2A2A 0 12px, #333333 12px 24px); box-shadow: 0 30px 60px rgba(21,21,21,0.30); border: 6px solid #FFFFFF; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; box-sizing: border-box; text-decoration: none">
+        <span style="align-self: flex-start; background: #F5A3E4; color: #151515; font: 600 12px/1 Inter, sans-serif; border-radius: 999px; padding: 6px 10px">1.47M views</span>
+        <span aria-hidden="true" style="align-self: center; width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.92); display: grid; place-items: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#151515" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+        <span style="color: #E8E6E1; font: 500 11px/1.4 'JetBrains Mono', monospace">IMG-02 · hero video cover · 9:16 · 1080×1920</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED ON + BRANDS ============ -->
+<section aria-label="Featured on and brands" style="padding: 0 clamp(16px, 4cqi, 40px) clamp(56px, 8cqi, 104px)">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; align-items: center">
+    <div style="display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; justify-content: center">
+      <span style="font: 500 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: #5C5A55">Featured on</span>
+      <span style="font: 700 16px/1.2 'Inter Tight', sans-serif; color: #3A3935">Kantipur Television</span>
+      <span style="font: 700 16px/1.2 'Inter Tight', sans-serif; color: #3A3935">News24</span>
+      <span style="font: 700 16px/1.2 'Inter Tight', sans-serif; color: #3A3935">BBC Media Action</span>
+    </div>
+    <div role="region" aria-roledescription="carousel" aria-label="Brands I’ve worked with" onMouseEnter="{{pause}}" onMouseLeave="{{resume}}" onFocus="{{pause}}" onBlur="{{resume}}" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px">
+      <p style="margin: 0 0 8px; font: 500 11px/1 'JetBrains Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: #5C5A55">Brands I’ve worked with</p>
+      <div ref="{{trackRef}}" onScroll="{{onScroll}}" onPointerDown="{{touched}}" onTouchStart="{{touched}}" style="width: 100%; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%)">
+        <sc-for list="{{pages}}" as="p" hint-placeholder-count="2">
+          <ul aria-label="{{p.label}}" style="flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always; list-style: none; margin: 0; padding: 4px clamp(8px, 3cqi, 40px); box-sizing: border-box; display: grid; grid-template-columns: repeat({{p.cols}}, minmax(0, 1fr)); gap: 12px clamp(12px, 2.6cqi, 36px); align-items: center">
+            <sc-for list="{{p.items}}" as="b" hint-placeholder-count="8">
+              <li style="height: 64px; display: flex; align-items: center; justify-content: center">
+                <span role="img" aria-label="{{b.name}} logo" style="max-width: 100%; height: 40px; display: flex; align-items: center; justify-content: center; text-align: center; font: 800 clamp(16px, 1.8cqi, 21px)/1.05 'Inter Tight', sans-serif; letter-spacing: -0.02em; color: #7A7771">{{b.name}}</span>
+              </li>
+            </sc-for>
+          </ul>
+        </sc-for>
+      </div>
+      <div style="display: flex; justify-content: center">
+        <sc-for list="{{dots}}" as="d" hint-placeholder-count="2">
+          <button type="button" aria-label="{{d.label}}" aria-current="{{d.current}}" onClick="{{d.go}}" style="width: 44px; height: 44px; border: 0; padding: 0; background: transparent; cursor: pointer; display: grid; place-items: center"><span style="{{d.style}}"></span></button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" aria-labelledby="about-title" style="padding: clamp(56px, 8cqi, 104px) clamp(16px, 4cqi, 40px); background: #FFFFFF">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(40px, 5cqi, 64px)">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr)); gap: clamp(32px, 6cqi, 80px); align-items: center">
+      <div style="position: relative; max-width: 440px; width: 100%; margin: 0 auto">
+        <div role="img" aria-label="Portrait of Shreya (placeholder)" style="aspect-ratio: 4 / 5; border-radius: 28px; background: repeating-linear-gradient(135deg, #E4E1DA 0 10px, #ECE9E3 10px 20px); display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; font: 500 11px/1.4 'JetBrains Mono', monospace; color: #4A4842">IMG-01 · portrait, warm light · 4:5 · 1200×1500</div>
+        <div style="position: absolute; left: -12px; bottom: 28px; background: #F5A3E4; border-radius: 16px; padding: 12px 16px; box-shadow: 0 10px 24px rgba(21,21,21,0.14); transform: rotate(-3deg)">
+          <div style="font: 800 20px/1.1 'Inter Tight', sans-serif; letter-spacing: -0.02em">On national TV</div>
+          <div style="font-size: 12px; font-weight: 500; margin-top: 4px">Stand-up on Comedy Champion</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font: 500 12px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #A3106F">About me</p>
+        <h2 id="about-title" style="margin: 0; font: 800 clamp(30px, 4.2cqi, 52px)/1.04 'Inter Tight', sans-serif; letter-spacing: -0.03em; text-wrap: balance">I was the quiet one in class. Then I ended up doing comedy on national television.</h2>
+        <p style="margin: 0; color: #4F4D48; max-width: 36em; text-wrap: pretty">I studied finance at Kathmandu University School of Management and discovered I loved statistics more than I expected. Running a small clothing business pulled me into marketing, and making content for brands taught me what makes people stop scrolling.</p>
+        <p style="margin: 0; color: #4F4D48; max-width: 36em; text-wrap: pretty">Today I combine both sides: the creative instinct of a creator and the discipline of an analyst. I run Shreya Simplifies, a page that breaks down brand campaigns, and I lead free workshops for young creators.</p>
+        <dl style="margin: 4px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px 24px; border-top: 1px solid #E6E3DC; padding-top: 20px">
+          <div><dt style="font-weight: 600; font-size: 14px">BBA (Honors), Finance · CGPA 3.87</dt><dd style="margin: 4px 0 0; font-size: 13px; color: #5C5A55">Kathmandu University School of Management, 2021–2025. Recognized for a perfect 4.0 semester.</dd></div>
+          <div><dt style="font-weight: 600; font-size: 14px">Research in progress</dt><dd style="margin: 4px 0 0; font-size: 13px; color: #5C5A55">How national identity and ethnocentrism shape preference for domestic products in Nepal.</dd></div>
+          <div><dt style="font-weight: 600; font-size: 14px">Toolkit</dt><dd style="margin: 4px 0 0; font-size: 13px; color: #5C5A55">Python, Excel, Power BI, Meta Ads Manager; SQL, R and Tableau from coursework.</dd></div>
+        </dl>
+        <a href="[CV-PDF-URL]" style="align-self: flex-start; color: #151515; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; text-underline-offset: 4px">Download CV (PDF) <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"></path></svg></a>
+      </div>
+    </div>
+    <dl style="margin: 0; background: #151515; color: #FFFFFF; border-radius: 24px; padding: clamp(24px, 3.4cqi, 36px) clamp(20px, 4cqi, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 24px">
+      <div><dt style="font: 800 clamp(32px, 3.8cqi, 44px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">1.47M</dt><dd style="margin: 8px 0 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #BDBAB3">Top campaign · Wai Wai</dd></div>
+      <div><dt style="font: 800 clamp(32px, 3.8cqi, 44px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">859K+</dt><dd style="margin: 8px 0 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #BDBAB3">Longest video · 2:38</dd></div>
+      <div><dt style="font: 800 clamp(32px, 3.8cqi, 44px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">2.8×</dt><dd style="margin: 8px 0 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #BDBAB3">Median views, humor-first</dd></div>
+      <div><dt style="font: 800 clamp(32px, 3.8cqi, 44px)/1 'Inter Tight', sans-serif; letter-spacing: -0.03em">55</dt><dd style="margin: 8px 0 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #BDBAB3">Sponsored videos analyzed</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ RESULTS ============ -->
+<section id="results" aria-labelledby="results-title" style="padding: clamp(56px, 8cqi, 104px) clamp(16px, 4cqi, 40px)">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(32px, 4cqi, 48px)">
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
+      <p style="margin: 0; display: inline-block; background: #FBD9F3; color: #7A0B52; border-radius: 999px; padding: 5px 12px; font: 500 11px/1.2 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase">Brand work</p>
+      <h2 id="results-title" style="margin: 0; font: 800 clamp(32px, 4.6cqi, 56px)/1.02 'Inter Tight', sans-serif; letter-spacing: -0.03em">Real campaigns, real results.</h2>
+      <p style="margin: 0; color: #5C5A55; max-width: 34em">Ride-hailing, payments, smartphones, motorcycles, food, personal care and e-commerce. Views per campaign video.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px">
+      <sc-for list="{{featured}}" as="c" hint-placeholder-count="3">
+        <article style="background: #FFFFFF; border: 1px solid #E6E3DC; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column">
+          <div role="img" aria-label="{{c.brand}} campaign still (placeholder)" style="aspect-ratio: 4 / 3; background: {{c.tint}}; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; box-sizing: border-box">
+            <span style="align-self: flex-start; background: #FFFFFF; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 600">{{c.tag}}</span>
+            <span style="font: 500 11px/1.4 'JetBrains Mono', monospace; color: #3A3935">{{c.img}}</span>
+          </div>
+          <div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 10px">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap">
+              <h3 style="margin: 0; font: 700 20px/1.2 'Inter Tight', sans-serif">{{c.brand}}</h3>
+              <span style="font-size: 13px; color: #5C5A55">{{c.category}}</span>
+            </div>
+            <p style="margin: 0; font: 800 clamp(36px, 4cqi, 46px)/1 'Inter Tight', sans-serif; letter-spacing: -0.035em">{{c.views}} <span style="font: 500 13px/1 Inter, sans-serif; letter-spacing: 0; color: #5C5A55">views</span></p>
+            <p style="margin: 0; font-size: 14px; color: #4F4D48">{{c.line}}</p>
+            <a href="{{c.url}}" style="color: #151515; font-weight: 600; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; text-underline-offset: 4px">Watch the video <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+    <div style="background: #FFFFFF; border: 1px solid #E6E3DC; border-radius: 24px; padding: clamp(20px, 3cqi, 32px)">
+      <h3 style="margin: 0 0 16px; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #5C5A55">More campaigns · views per video</h3>
+      <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px">
+        <sc-for list="{{more}}" as="m" hint-placeholder-count="5">
+          <li style="display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; align-items: baseline">
+            <span style="font-weight: 600">{{m.brand}} <span style="font-weight: 400; color: #5C5A55; font-size: 13px">· {{m.category}}</span></span>
+            <span style="font: 700 16px/1 'Inter Tight', sans-serif; font-variant-numeric: tabular-nums">{{m.views}}</span>
+            <span aria-hidden="true" style="grid-column: 1 / -1; height: 8px; border-radius: 999px; background: #EEEBE5; overflow: hidden; display: block"><span style="display: block; height: 100%; width: {{m.pct}}%; background: #151515; border-radius: 999px"></span></span>
+          </li>
+        </sc-for>
+      </ol>
+      <p style="margin: 16px 0 0; font-size: 12px; color: #5C5A55">Bars on one scale: full width = 1.47M (Wai Wai, top campaign).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDIES ============ -->
+<section aria-labelledby="stories-title" style="padding: 0 clamp(16px, 4cqi, 40px) clamp(56px, 8cqi, 104px)">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 4cqi, 44px)">
+    <h2 id="stories-title" style="margin: 0; font: 800 clamp(28px, 3.6cqi, 44px)/1.05 'Inter Tight', sans-serif; letter-spacing: -0.03em">Two stories, measured.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 20px">
+
+      <article style="background: #FFFFFF; border: 1px solid #E6E3DC; border-radius: 24px; padding: clamp(22px, 3cqi, 36px); display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #5C5A55">Mid Valley College · 2025–26</p>
+        <h3 style="margin: 0; font: 800 clamp(24px, 2.6cqi, 30px)/1.1 'Inter Tight', sans-serif; letter-spacing: -0.02em">Building a new college’s audience from almost zero</h3>
+        <dl style="margin: 0; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 10px 16px; font-size: 14px">
+          <dt style="font: 500 11px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5A55">Challenge</dt>
+          <dd style="margin: 0; color: #3A3935">A newly opened college with 100 TikTok followers, 500 on Facebook, and a first entrance exam to fill.</dd>
+          <dt style="font: 500 11px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5A55">What I did</dt>
+          <dd style="margin: 0; color: #3A3935">Studied which topics, formats and messages performed, planned content around them, and ran Meta Ads campaigns.</dd>
+          <dt style="font: 500 11px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #A3106F">Result</dt>
+          <dd style="margin: 0; color: #151515; font-weight: 600">1,500+ entrance applicants in year one, 8M+ views, engagement up nearly 300%.</dd>
+        </dl>
+        <div style="background: #F2F0EB; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+          <p style="margin: 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5A55">Followers, before → after</p>
+          <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr) 48px; gap: 8px 12px; align-items: center; font-size: 13px">
+            <span style="grid-column: 1 / -1; display: flex; justify-content: space-between; font-weight: 600">Facebook <span style="font: 500 12px/1.4 'JetBrains Mono', monospace; color: #5C5A55">54×</span></span>
+            <span style="font: 500 11px/1 'JetBrains Mono', monospace; color: #5C5A55">BEFORE</span>
+            <span aria-hidden="true" style="height: 10px; border-radius: 999px; background: #E0DDD5; display: block; overflow: hidden"><span style="display: block; width: 2%; min-width: 4px; height: 100%; background: #5C5A55"></span></span>
+            <span style="text-align: right; font: 500 12px/1 'JetBrains Mono', monospace">500</span>
+            <span style="font: 500 11px/1 'JetBrains Mono', monospace; color: #5C5A55">AFTER</span>
+            <span aria-hidden="true" style="height: 10px; border-radius: 999px; background: #E0DDD5; display: block; overflow: hidden"><span style="display: block; width: 100%; height: 100%; background: #151515"></span></span>
+            <span style="text-align: right; font: 500 12px/1 'JetBrains Mono', monospace">27K+</span>
+            <span style="grid-column: 1 / -1; display: flex; justify-content: space-between; font-weight: 600; margin-top: 8px">TikTok <span style="font: 500 12px/1.4 'JetBrains Mono', monospace; color: #5C5A55">60×</span></span>
+            <span style="font: 500 11px/1 'JetBrains Mono', monospace; color: #5C5A55">BEFORE</span>
+            <span aria-hidden="true" style="height: 10px; border-radius: 999px; background: #E0DDD5; display: block; overflow: hidden"><span style="display: block; width: 0.4%; min-width: 4px; height: 100%; background: #5C5A55"></span></span>
+            <span style="text-align: right; font: 500 12px/1 'JetBrains Mono', monospace">100</span>
+            <span style="font: 500 11px/1 'JetBrains Mono', monospace; color: #5C5A55">AFTER</span>
+            <span aria-hidden="true" style="height: 10px; border-radius: 999px; background: #E0DDD5; display: block; overflow: hidden"><span style="display: block; width: 22%; height: 100%; background: #A3106F"></span></span>
+            <span style="text-align: right; font: 500 12px/1 'JetBrains Mono', monospace">6K+</span>
+          </div>
+          <p style="margin: 0; font-size: 12px; color: #5C5A55">All bars drawn on one scale (27,000 = full width).</p>
+        </div>
+      </article>
+
+      <article style="background: #FFFFFF; border: 1px solid #E6E3DC; border-radius: 24px; padding: clamp(22px, 3cqi, 36px); display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #5C5A55">Praavi Pahiran · 2024–25</p>
+        <h3 style="margin: 0; font: 800 clamp(24px, 2.6cqi, 30px)/1.1 'Inter Tight', sans-serif; letter-spacing: -0.02em">One video, measurable sales</h3>
+        <dl style="margin: 0; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 10px 16px; font-size: 14px">
+          <dt style="font: 500 11px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5A55">Challenge</dt>
+          <dd style="margin: 0; color: #3A3935">A small online clothing store I co-founded, with no advertising budget.</dd>
+          <dt style="font: 500 11px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5A55">What I did</dt>
+          <dd style="margin: 0; color: #3A3935">Wrote, filmed and edited our marketing videos myself, built around how real customers wear the clothes.</dd>
+          <dt style="font: 500 11px/1.9 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; color: #A3106F">Result</dt>
+          <dd style="margin: 0; color: #3A3935"><strong style="color: #151515">One video reached 1M+ organic views and sales rose 35%.</strong> It is also where I realized marketing, not finance, was my path.</dd>
+        </dl>
+        <div style="background: #F2F0EB; border-radius: 16px; padding: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 12px; text-align: center">
+          <div><div style="font: 800 clamp(40px, 5cqi, 56px)/1 'Inter Tight', sans-serif; letter-spacing: -0.04em">1M+</div><div style="font-size: 13px; color: #5C5A55; margin-top: 4px">organic views</div></div>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5C5A55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          <div><div style="font: 800 clamp(40px, 5cqi, 56px)/1 'Inter Tight', sans-serif; letter-spacing: -0.04em; color: #A3106F">+35%</div><div style="font-size: 13px; color: #5C5A55; margin-top: 4px">sales</div></div>
+          <p style="margin: 0; flex: 1 1 100%; font-size: 12px; color: #5C5A55; text-align: left">Zero ad spend.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research" aria-labelledby="research-title" style="padding: clamp(56px, 8cqi, 104px) clamp(16px, 4cqi, 40px); background: #151515; color: #FFFFFF">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: clamp(32px, 6cqi, 80px); align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p style="margin: 0; font: 500 12px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #F5A3E4">Personal research · Oct 2026</p>
+      <h2 id="research-title" style="margin: 0; font: 800 clamp(32px, 4.4cqi, 54px)/1.02 'Inter Tight', sans-serif; letter-spacing: -0.03em; text-wrap: balance">I tested my own instincts with 55 videos.</h2>
+      <p style="margin: 0; color: #CFCCC5; max-width: 34em; text-wrap: pretty">I believed humor and short videos always win. My longest video, 2 minutes 38 seconds, crossed 859K organic views anyway. So I analyzed 55 of my sponsored videos in Python with Mann-Whitney U tests, Spearman correlations and regression with robustness checks.</p>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; color: #EDEBE6">
+        <li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #F5A3E4">→</span><span>Humor-first videos earned <strong>2.8×</strong> the median views (p = 0.0001).</span></li>
+        <li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #F5A3E4">→</span><span>But in <strong>45 of 46</strong> humor-first videos, the average viewer left before the brand appeared.</span></li>
+        <li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #F5A3E4">→</span><span>Longer videos did not perform worse.</span></li>
+      </ul>
+      <ul aria-label="Tools used" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+        <li style="border: 1px solid #4A4844; border-radius: 999px; padding: 4px 12px; font: 500 12px/1.4 'JetBrains Mono', monospace; color: #DAD7D0">Python</li>
+        <li style="border: 1px solid #4A4844; border-radius: 999px; padding: 4px 12px; font: 500 12px/1.4 'JetBrains Mono', monospace; color: #DAD7D0">pandas</li>
+        <li style="border: 1px solid #4A4844; border-radius: 999px; padding: 4px 12px; font: 500 12px/1.4 'JetBrains Mono', monospace; color: #DAD7D0">SciPy</li>
+        <li style="border: 1px solid #4A4844; border-radius: 999px; padding: 4px 12px; font: 500 12px/1.4 'JetBrains Mono', monospace; color: #DAD7D0">statsmodels</li>
+      </ul>
+      <a href="https://github.com/subedishreya17-create/branded-content-performance-analysis" style="align-self: flex-start; background: #FFFFFF; color: #151515; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px; padding: 0 22px; min-height: 48px; display: inline-flex; align-items: center; gap: 8px">Code &amp; data on GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+    <figure style="margin: 0; background: #1F1F1F; border: 1px solid #333230; border-radius: 24px; padding: clamp(20px, 3cqi, 32px); display: flex; flex-direction: column; gap: 20px">
+      <figcaption style="font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #BDBAB3">Median views by opening style</figcaption>
+      <div role="img" aria-label="Bar chart: humor-first videos median 62,350 views (46 videos); direct videos median 22,208 views (6 videos)" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 4cqi, 48px); align-items: end; height: 280px; border-bottom: 1px solid #4A4844; padding: 0 clamp(8px, 3cqi, 40px)">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+          <span style="font: 800 clamp(22px, 2.6cqi, 30px)/1 'Inter Tight', sans-serif">62,350</span>
+          <span style="width: 100%; max-width: 140px; height: 82%; background: #F5A3E4; border-radius: 10px 10px 0 0; display: block"></span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; height: 100%; justify-content: flex-end">
+          <span style="font: 800 clamp(22px, 2.6cqi, 30px)/1 'Inter Tight', sans-serif">22,208</span>
+          <span style="width: 100%; max-width: 140px; height: 29%; background: #8E8B85; border-radius: 10px 10px 0 0; display: block"></span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 4cqi, 48px); padding: 0 clamp(8px, 3cqi, 40px); text-align: center; font-size: 13px; color: #DAD7D0; margin-top: -8px">
+        <span>Humor-first (46)</span>
+        <span>Direct (6)</span>
+      </div>
+      <p style="margin: 0; font-size: 12px; color: #A9A69F">Small, observational sample: patterns, not proof of cause. Next: a controlled test with the brand at 5 vs. 30 seconds.</p>
+      <div style="border-top: 1px dashed #3A3935; padding-top: 20px; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; color: #BDBAB3">Clip 44 · humor opening · 0:48</p>
+        <p style="margin: 0; font: 700 17px/1.25 'Inter Tight', sans-serif">Where viewers leave vs. where the brand appears</p>
+        <div role="img" aria-label="Timeline of a 48-second video: the average viewer watched 14 seconds; the brand appeared at 31 seconds" style="position: relative; height: 28px; border-radius: 8px; background: #3A3935; margin-top: 10px">
+          <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 29.2%; background: #F5A3E4; border-radius: 8px 0 0 8px; display: block"></span>
+          <span style="position: absolute; left: 64.6%; top: -10px; bottom: -4px; width: 3px; background: #FFFFFF; display: block"></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font: 500 11px/1 'JetBrains Mono', monospace; color: #BDBAB3"><span>0:00</span><span>0:14</span><span>0:31</span><span>0:48</span></div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: #DAD7D0">
+          <li style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 3px; background: #F5A3E4; display: block"></span>Average viewer watched 14 seconds</li>
+          <li style="display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 3px; background: #FFFFFF; display: block"></span>Brand appeared at 31 seconds</li>
+        </ul>
+        <p style="margin: 0; font-size: 12px; color: #A9A69F">One real video from the dataset of 55, brand anonymized.</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WORK GRID ============ -->
+<section id="work" aria-labelledby="work-title" style="padding: clamp(56px, 8cqi, 104px) clamp(16px, 4cqi, 40px)">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 4cqi, 44px)">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; align-self: flex-start; background: #FBD9F3; color: #7A0B52; border-radius: 999px; padding: 5px 12px; font: 500 11px/1.2 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase">Selected videos</p>
+        <h2 id="work-title" style="margin: 0; font: 800 clamp(32px, 4.6cqi, 56px)/1.02 'Inter Tight', sans-serif; letter-spacing: -0.03em">Watch the work.</h2>
+      </div>
+      <a href="[TIKTOK-PROFILE-URL]" style="color: #151515; font-weight: 600; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; text-underline-offset: 4px">All videos on TikTok <span aria-hidden="true">↗</span></a>
+    </div>
+    <sc-for list="{{groups}}" as="g" hint-placeholder-count="2">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <h3 style="margin: 0; font: 700 18px/1.2 'Inter Tight', sans-serif">{{g.title}} <span aria-hidden="true">→</span></h3>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(160px, 42%), 1fr)); gap: clamp(10px, 1.6cqi, 18px)">
+          <sc-for list="{{g.items}}" as="v" hint-placeholder-count="4">
+            <li style="display: flex; flex-direction: column; gap: 8px">
+              <a href="{{v.url}}" aria-label="Watch on {{v.platform}}: {{v.title}}" style="position: relative; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; background: repeating-linear-gradient(135deg, #2A2A2A 0 12px, #333333 12px 24px); display: flex; flex-direction: column; justify-content: space-between; padding: 10px; box-sizing: border-box; text-decoration: none">
+                <span style="display: flex; justify-content: space-between; gap: 6px">
+                  <span style="background: rgba(255,255,255,0.92); color: #151515; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 600">{{v.brand}}</span>
+                  <span style="background: #F5A3E4; color: #151515; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 600">{{v.views}}</span>
+                </span>
+                <span aria-hidden="true" style="align-self: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.9); display: grid; place-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#151515" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+                <span style="color: #D9D6CF; font: 500 10px/1.3 'JetBrains Mono', monospace">{{v.img}}</span>
+              </a>
+              <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600; line-height: 1.3">{{v.title}}</span><span style="font-size: 12px; color: #5C5A55">{{v.platform}} ↗</span></span>
+            </li>
+          </sc-for>
+        </ul>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ============ BEYOND THE FEED ============ -->
+<section aria-labelledby="beyond-title" style="padding: 0 clamp(16px, 4cqi, 40px) clamp(56px, 8cqi, 104px)">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 4cqi, 44px)">
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
+      <p style="margin: 0; background: #FBD9F3; color: #7A0B52; border-radius: 999px; padding: 5px 12px; font: 500 11px/1.2 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase">Off the feed</p>
+      <h2 id="beyond-title" style="margin: 0; font: 800 clamp(32px, 4.6cqi, 56px)/1.02 'Inter Tight', sans-serif; letter-spacing: -0.03em">Stage, screen and classroom.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px">
+      <article style="display: flex; flex-direction: column; gap: 14px">
+        <div role="img" aria-label="Shreya performing on Comedy Champion (placeholder)" style="aspect-ratio: 4 / 3; border-radius: 20px; background: repeating-linear-gradient(135deg, #E4E1DA 0 10px, #ECE9E3 10px 20px); transform: rotate(-1.5deg); display: flex; align-items: flex-end; padding: 14px; box-sizing: border-box; font: 500 11px/1.4 'JetBrains Mono', monospace; color: #4A4842">IMG-20 · TV stage still · 4:3</div>
+        <h3 style="margin: 0; font: 700 20px/1.2 'Inter Tight', sans-serif">Television</h3>
+        <p style="margin: 0; font-size: 14px; color: #4F4D48">Stand-up on Comedy Champion; comedy skits on Comedy Darbar and Comedy Club with Champions; interviewed on News24.</p>
+      </article>
+      <article style="display: flex; flex-direction: column; gap: 14px">
+        <div role="img" aria-label="BBC Media Action work (placeholder)" style="aspect-ratio: 4 / 3; border-radius: 20px; background: repeating-linear-gradient(135deg, #E4E1DA 0 10px, #ECE9E3 10px 20px); transform: rotate(1.5deg); display: flex; align-items: flex-end; padding: 14px; box-sizing: border-box; font: 500 11px/1.4 'JetBrains Mono', monospace; color: #4A4842">IMG-21 · BBC Media Action · 4:3</div>
+        <h3 style="margin: 0; font: 700 20px/1.2 'Inter Tight', sans-serif">BBC Media Action</h3>
+        <p style="margin: 0; font-size: 14px; color: #4F4D48">Developed content ideas with the impact team on women’s empowerment and entrepreneurship.</p>
+      </article>
+      <article style="display: flex; flex-direction: column; gap: 14px">
+        <div role="img" aria-label="Creator workshop (placeholder)" style="aspect-ratio: 4 / 3; border-radius: 20px; background: repeating-linear-gradient(135deg, #E4E1DA 0 10px, #ECE9E3 10px 20px); transform: rotate(-1deg); display: flex; align-items: flex-end; padding: 14px; box-sizing: border-box; font: 500 11px/1.4 'JetBrains Mono', monospace; color: #4A4842">IMG-22 · workshop photo · 4:3</div>
+        <h3 style="margin: 0; font: 700 20px/1.2 'Inter Tight', sans-serif">Shreya Simplifies</h3>
+        <p style="margin: 0; font-size: 14px; color: #4F4D48">A page that breaks down brand campaigns, plus free workshops for young creators.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" aria-labelledby="services-title" style="padding: clamp(56px, 8cqi, 104px) clamp(16px, 4cqi, 40px); background: #FFFFFF">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 4cqi, 44px)">
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
+      <p style="margin: 0; background: #FBD9F3; color: #7A0B52; border-radius: 999px; padding: 5px 12px; font: 500 11px/1.2 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase">What I offer</p>
+      <h2 id="services-title" style="margin: 0; font: 800 clamp(32px, 4.6cqi, 56px)/1.02 'Inter Tight', sans-serif; letter-spacing: -0.03em">Ways we can work together.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
+      <article style="background: #F5A3E4; border-radius: 24px; padding: 24px; min-height: 260px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+        <span style="font: 700 16px/1 'Inter Tight', sans-serif">01</span>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <h3 style="margin: 0; font: 800 24px/1.1 'Inter Tight', sans-serif; letter-spacing: -0.02em">Brand campaigns</h3>
+          <p style="margin: 0; font-size: 14px; color: #2A2A2A">Scripted POV and comedy videos that land your product before the scroll. Concept, filming and editing handled.</p>
+        </div>
+      </article>
+      <article style="background: #A99CF5; border-radius: 24px; padding: 24px; min-height: 260px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+        <span style="font: 700 16px/1 'Inter Tight', sans-serif">02</span>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <h3 style="margin: 0; font: 800 24px/1.1 'Inter Tight', sans-serif; letter-spacing: -0.02em">UGC for your ads</h3>
+          <p style="margin: 0; font-size: 14px; color: #1E1E1E">Native-feeling TikToks and Reels you can run on your own pages and in Meta ads.</p>
+        </div>
+      </article>
+      <article style="background: #97E283; border-radius: 24px; padding: 24px; min-height: 260px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; gap: 32px">
+        <span style="font: 700 16px/1 'Inter Tight', sans-serif">03</span>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <h3 style="margin: 0; font: 800 24px/1.1 'Inter Tight', sans-serif; letter-spacing: -0.02em">Content strategy &amp; analytics</h3>
+          <p style="margin: 0; font-size: 14px; color: #1E1E1E">What to post and why, backed by your own performance data and a clear post-campaign report.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="contact" aria-labelledby="cta-title" style="padding: clamp(56px, 8cqi, 104px) clamp(16px, 4cqi, 40px) clamp(32px, 4cqi, 48px)">
+  <div style="max-width: 960px; margin: 0 auto; background: #151515; color: #FFFFFF; border-radius: 32px; padding: clamp(36px, 6cqi, 72px) clamp(22px, 5cqi, 64px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+    <h2 id="cta-title" style="margin: 0; font: 800 clamp(32px, 5cqi, 60px)/1.02 'Inter Tight', sans-serif; letter-spacing: -0.03em; text-wrap: balance">Let’s make content that works, and prove it.</h2>
+    <p style="margin: 0; color: #CFCCC5; max-width: 30em">Open to marketing analytics roles, brand collaborations and research conversations.</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px">
+      <a href="mailto:subedishreya17@gmail.com" style="background: #F5A3E4; color: #151515; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px; padding: 0 24px; min-height: 52px; display: inline-flex; align-items: center">subedishreya17@gmail.com</a>
+      <a href="[LINKEDIN-URL]" style="border: 1px solid #55534E; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px; padding: 0 22px; min-height: 52px; display: inline-flex; align-items: center; gap: 6px">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/subedishreya17-create" style="border: 1px solid #55534E; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px; padding: 0 22px; min-height: 52px; display: inline-flex; align-items: center; gap: 6px">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer style="padding: 0 clamp(12px, 2cqi, 24px) clamp(12px, 2cqi, 24px)">
+  <div style="background: #F5A3E4; border-radius: 32px; padding: clamp(24px, 4cqi, 48px) clamp(20px, 4cqi, 48px) clamp(12px, 2cqi, 24px); display: flex; flex-direction: column; gap: clamp(24px, 4cqi, 56px); overflow: hidden">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px">
+      <div>
+        <p style="margin: 0; font: 700 16px/1.3 'Inter Tight', sans-serif">Shreya Subedi</p>
+        <p style="margin: 2px 0 0; font-size: 13px; color: #3A2A36">Content creator &amp; marketing analyst · Kathmandu, Nepal</p>
+      </div>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 6px">
+        <a href="#about" style="background: rgba(255,255,255,0.55); color: #151515; text-decoration: none; border-radius: 999px; padding: 0 14px; min-height: 44px; display: inline-flex; align-items: center; font-size: 13px; font-weight: 500">About</a>
+        <a href="#results" style="background: rgba(255,255,255,0.55); color: #151515; text-decoration: none; border-radius: 999px; padding: 0 14px; min-height: 44px; display: inline-flex; align-items: center; font-size: 13px; font-weight: 500">Results</a>
+        <a href="#work" style="background: rgba(255,255,255,0.55); color: #151515; text-decoration: none; border-radius: 999px; padding: 0 14px; min-height: 44px; display: inline-flex; align-items: center; font-size: 13px; font-weight: 500">Work</a>
+        <a href="#contact" style="background: rgba(255,255,255,0.55); color: #151515; text-decoration: none; border-radius: 999px; padding: 0 14px; min-height: 44px; display: inline-flex; align-items: center; font-size: 13px; font-weight: 500">Contact</a>
+      </nav>
+      <div style="display: flex; gap: 8px">
+        <a href="[TIKTOK-URL]" aria-label="TikTok" style="width: 44px; height: 44px; border-radius: 50%; background: #151515; color: #FFFFFF; display: grid; place-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4 5 4"></path></svg></a>
+        <a href="[INSTAGRAM-URL]" aria-label="Instagram" style="width: 44px; height: 44px; border-radius: 50%; background: #151515; color: #FFFFFF; display: grid; place-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"></circle></svg></a>
+        <a href="[YOUTUBE-URL]" aria-label="YouTube" style="width: 44px; height: 44px; border-radius: 50%; background: #151515; color: #FFFFFF; display: grid; place-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"></path></svg></a>
+      </div>
+    </div>
+    <p aria-hidden="true" style="margin: 0; font: 800 clamp(54px, 15.5cqi, 220px)/0.82 'Inter Tight', sans-serif; letter-spacing: -0.055em; white-space: nowrap">Shreya Subedi</p>
+    <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font: 500 11px/1.4 'JetBrains Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; color: #3A2A36"><span>© 2026 Shreya Subedi</span><span>Kathmandu, Nepal</span></p>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8000}}'>
+class Component extends DCLogic {
+  constructor(...args) {
+    super(...args);
+    this.state = { page: 0, w: 1200, navW: 1200, menu: false };
+    this.paused = false;
+    this.lastTouch = 0;
+    var self = this;
+    this.trackRef = function (el) { self.track = el; };
+    this.navRef = function (el) { self.nav = el; };
+    this.toggleMenu = function () { self.setState({ menu: !self.state.menu }); };
+    this.closeMenu = function () { self.setState({ menu: false }); };
+    this.onScroll = function () {
+      var el = self.track;
+      if (!el || !el.clientWidth) return;
+      var p = Math.round(el.scrollLeft / el.clientWidth);
+      if (p !== self.state.page) self.setState({ page: p });
+    };
+    this.touched = function () { self.lastTouch = Date.now(); };
+    this.pause = function () { self.paused = true; };
+    this.resume = function () { self.paused = false; };
+  }
+  brandList() {
+    return ['inDrive', 'eSewa', 'Wai Wai', 'Daraz', 'Royal Enfield', 'vivo', 'Colgate', 'Sunsilk', 'Ncell', 'Ultima', 'Fonepoints', 'Joy Papaya', 'Fasto', 'Big Mart', 'British Council Nepal', 'Nepal Life Insurance', 'Jeevee', 'IDP Nepal', 'Gazzabko Noodles'];
+  }
+  layout() {
+    var w = this.state.w;
+    if (w < 560) return { per: 4, cols: 2 };
+    if (w < 1000) return { per: 4, cols: 4 };
+    return { per: 8, cols: 8 };
+  }
+  pageCount() { return Math.ceil(this.brandList().length / this.layout().per); }
+  goTo(i) {
+    var n = this.pageCount();
+    var p = ((i % n) + n) % n;
+    if (this.track) this.track.scrollTo({ left: p * this.track.clientWidth, behavior: 'smooth' });
+    this.setState({ page: p });
+  }
+  componentDidMount() {
+    var self = this;
+    if (window.ResizeObserver && this.track) {
+      this.ro = new ResizeObserver(function (entries) {
+        var w = entries[0].contentRect.width;
+        if (Math.abs(w - self.state.w) > 1) {
+          self.setState({ w: w, page: 0 });
+          if (self.track) self.track.scrollLeft = 0;
+        }
+      });
+      this.ro.observe(this.track);
+    }
+    if (window.ResizeObserver && this.nav) {
+      this.navRo = new ResizeObserver(function (entries) {
+        var w = entries[0].contentRect.width;
+        if (Math.abs(w - self.state.navW) > 1) self.setState({ navW: w, menu: w < 760 ? self.state.menu : false });
+      });
+      this.navRo.observe(this.nav);
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      this.timer = setInterval(function () {
+        if (self.paused || Date.now() - self.lastTouch < 5000) return;
+        self.goTo(self.state.page + 1);
+      }, 5000);
+    }
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    if (this.ro) this.ro.disconnect();
+    if (this.navRo) this.navRo.disconnect();
+  }
+  renderVals() {
+    var self = this;
+    var vid = function (n, brand, views, title) {
+      return { brand: brand, views: views, title: title, url: '[VIDEO-URL]', platform: '[TikTok / Instagram / Facebook]', img: 'IMG-' + n + ' · 9:16' };
+    };
+    var lay = this.layout();
+    var all = this.brandList();
+    var n = this.pageCount();
+    var pages = [];
+    var dots = [];
+    for (var i = 0; i < n; i++) {
+      pages.push({ cols: lay.cols, label: 'Brands, page ' + (i + 1) + ' of ' + n, items: all.slice(i * lay.per, (i + 1) * lay.per).map(function (b) { return { name: b }; }) });
+      (function (k) {
+        var on = k === self.state.page;
+        dots.push({
+          label: 'Show brands page ' + (k + 1),
+          current: on ? 'true' : 'false',
+          go: function () { self.lastTouch = Date.now(); self.goTo(k); },
+          style: 'display: block; height: 8px; border-radius: 999px; transition: width .3s, background .3s; width: ' + (on ? '24px' : '8px') + '; background: ' + (on ? '#151515' : '#C9C5BD')
+        });
+      })(i);
+    }
+    var compact = this.state.navW < 760;
+    var open = compact && this.state.menu;
+    return {
+      navRef: this.navRef,
+      navWide: !compact,
+      navCompact: compact,
+      menuOpen: open,
+      menuExpanded: open ? 'true' : 'false',
+      menuLabel: open ? 'Close menu' : 'Open menu',
+      menuIcon: open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16',
+      navRadius: open ? '28px' : '999px',
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      trackRef: this.trackRef,
+      onScroll: this.onScroll,
+      touched: this.touched,
+      pause: this.pause,
+      resume: this.resume,
+      pages: pages,
+      dots: dots,
+      featured: [
+        { brand: 'Wai Wai', category: 'Food · noodles', tag: 'Top campaign', views: '1.47M', line: '[One line: the idea behind the video]', url: '[VIDEO-URL]', img: 'IMG-03 · campaign still · 4:3', tint: '#F7C59F' },
+        { brand: 'inDrive', category: 'Ride-hailing', tag: '2:38 · Longest video', views: '859K+', line: '“Dream It, Do It”', url: '[VIDEO-URL]', img: 'IMG-04 · campaign still · 4:3', tint: '#C9E8B8' },
+        { brand: 'eSewa', category: 'Digital payments', tag: 'Payments', views: '561K', line: '[One line: the idea behind the video]', url: '[VIDEO-URL]', img: 'IMG-05 · campaign still · 4:3', tint: '#CFC7F7' }
+      ],
+      more: [
+        { brand: 'Fonepoints', category: 'Smartphones', views: '557.1K', pct: 37.9 },
+        { brand: 'Ultima', category: '[category]', views: '368.1K', pct: 25.0 },
+        { brand: 'Gazzabko Noodles', category: 'Food', views: '358.6K', pct: 24.4 },
+        { brand: 'Fasto', category: '[category]', views: '312.2K', pct: 21.2 },
+        { brand: 'Daraz', category: 'E-commerce', views: '86.3K', pct: 5.9 }
+      ],
+      groups: [
+        { title: 'Brand campaigns', items: [vid('06', 'Wai Wai', '1.47M', '[Video title]'), vid('07', 'inDrive', '859K+', 'Dream It, Do It'), vid('08', 'eSewa', '561K', '[Video title]'), vid('09', 'Fonepoints', '557.1K', '[Video title]')] },
+        { title: 'Comedy & POV', items: [vid('10', 'Original', '[views]', '[Video title]'), vid('11', 'Original', '[views]', '[Video title]'), vid('12', 'Original', '[views]', '[Video title]'), vid('13', 'Original', '[views]', '[Video title]')] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
