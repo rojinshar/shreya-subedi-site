@@ -1,0 +1,10 @@
+// Cloudflare Workers Builds runs `npx wrangler deploy` after `npm run build`.
+// This serves the built dist/ folder as static assets; without it, wrangler
+// tries to auto-configure the Vite project and fails to parse vite.config.js.
+{
+  "name": "shreya-subedi-site",
+  "compatibility_date": "2026-10-19",
+  "assets": {
+    "directory": "./dist"
+  }
+}
